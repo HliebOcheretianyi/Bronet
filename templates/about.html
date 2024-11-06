@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Bronet - About</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body class="purple-background">
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('features') }}">Features</a></li>
-                <li><a href="{{ url_for('about') }}">About</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <h2>About Bronet</h2>
-        <p>Bronet was founded to help young adults expand their social circles and find friends who share their passions, without the pressure of expensive membership fees. We believe everyone deserves friendship and support.</p>
-    </section>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}About Us - Bronet{% endblock %}
+{% block content %}
+<section id="about">
+    <h2>About Bronet</h2>
+    <p>Bronet was created to foster genuine friendships, making it easy to find people you connect with. Designed for students, young professionals, and anyone new in town.</p>
+</section>
+{% endblock %}

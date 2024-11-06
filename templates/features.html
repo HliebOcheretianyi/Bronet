@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Bronet - Features</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body class="purple-background">
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('features') }}">Features</a></li>
-                <li><a href="{{ url_for('about') }}">About</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <h2>Our Key Features</h2>
-        <p>Discover interest-based matching, event planning, and location-based friend search. Meet others who share your passions and build your network effortlessly.</p>
-    </section>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Features - Bronet{% endblock %}
+{% block content %}
+<section id="features">
+    <h2>Our Features</h2>
+    <div class="feature">
+        <h3>Interest-based Matching</h3>
+        <p>Meet people who share your interests. Whether you're into art, sports, or technology, Bronet connects you with those who share your passions.</p>
+    </div>
+    <div class="feature">
+        <h3>Event & Activity Planning</h3>
+        <p>Coordinate meetups or join local events easily. Enjoy activities without the high cost, just bring your interest and meet great people!</p>
+    </div>
+    <div class="feature">
+        <h3>Geolocation Search</h3>
+        <p>Connect with people nearby and explore what's happening in your area.</p>
+    </div>
+</section>
+{% endblock %}
