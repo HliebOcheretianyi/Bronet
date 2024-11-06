@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bronet - Connect with Like-Minded People</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to Bronet!</h1>
+        <p>Your social connection app for meeting new people based on shared interests.</p>
+        <button><a href="#signup">Sign Up Now</a></button>
+    </section>
+
+    <section id="features">
+        <h2>Key Features</h2>
+        <div class="feature">
+            <h3>Interest-based Matching</h3>
+            <p>Find people who share your hobbies, whether you're into gaming, hiking, or arts.</p>
+        </div>
+        <div class="feature">
+            <h3>Event & Activity Planning</h3>
+            <p>Organize or join events with others who share your passions. Perfect for meetups!</p>
+        </div>
+        <div class="feature">
+            <h3>Geolocation Search</h3>
+            <p>Meet people nearby or find local events easily with our location-based search.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Bronet</h2>
+        <p>Bronet is designed to help you find meaningful friendships and expand your social circle. Whether you’re a student, a young professional, or someone new to a city, our app connects you with like-minded individuals.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need support, feel free to reach out!</p>
+        <form action="{{ url_for('submit_contact') }}" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bronet. All rights reserved. | <a href="#terms">Terms of Service</a> | <a href="#privacy">Privacy Policy</a></p>
+    </footer>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
