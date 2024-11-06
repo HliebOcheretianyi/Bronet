@@ -3,10 +3,12 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # Needed for session/flash messaging
 
+
 @app.route('/')
 def home():
     """Renders the home page."""
     return render_template('index.html')
+
 
 @app.route('/submit-contact', methods=['POST'])
 def submit_contact():
@@ -26,6 +28,7 @@ def submit_contact():
     # Flash a success message and redirect to the home page
     flash('Thank you for your message! We will get back to you shortly.', 'success')
     return redirect(url_for('home'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
