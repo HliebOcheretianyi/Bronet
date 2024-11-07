@@ -73,6 +73,10 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-link {
