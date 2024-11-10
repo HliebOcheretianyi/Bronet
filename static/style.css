@@ -1,13 +1,16 @@
 /* General Body Styling */
-body {
+body, html {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-    background-color: #4b0082;  /* Purple color from logo */
+    background-color: #4b0082;  /* Purple color */
     padding: 15px;
 }
 
@@ -38,10 +41,143 @@ main {
     margin: 20px auto;
     padding: 20px;
     text-align: center;
+    flex: 1;
 }
 
 h1, h2 {
     color: #4b0082;
+}
+
+#profile-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.profile-wrapper {
+    display: flex;
+    width: 100%; /* Ensure the wrapper takes full width of the viewport */
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.profile-card {
+    width: 100vw; /* Each card should take full viewport width */
+    max-width: 100%; /* Prevent cards from exceeding the viewport width */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Add shadow for depth */
+    margin: 20px; /* Optional: Add margin for spacing */
+    padding: 20px; /* Add padding for inner content spacing */
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Optional animation */
+    flex: 0 0 90%; /* Ensure each card takes 100% width */
+}
+
+.profile-card:hover {
+    transform: scale(1.05); /* Slightly larger on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Profile Content Styling */
+.profile-content {
+    text-align: center;
+    max-width: 400px;
+}
+
+/* Profile Image */
+.profile-image img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 2rem;
+    color: #4b0082;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+/* Profile Section Styling */
+#profile {
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    border: 2px solid #4b0082;
+}
+
+.profile-details p {
+    margin: 0;
+    color: #555;
+}
+
+.profile-details p strong {
+    display: inline-block;
+    color: #4b0082;
+}
+
+/* Social Media Section Styling */
+.profile-social {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.profile-social a {
+    color: #4b0082;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.profile-social a:hover {
+    color: #6a0dad;
+    text-decoration: underline;
 }
 
 /* Call-to-Action Button */
@@ -67,18 +203,16 @@ h1, h2 {
 }
 
 /* Footer Styling */
-/* Footer Styling */
 footer {
     background-color: #4b0082;
     color: white;
-    padding: 20px;
+
     text-align: center;
     display: block;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 
+/* Footer Link Styling */
 .footer-link {
     color: white;
     text-decoration: none;
@@ -88,7 +222,6 @@ footer {
 .footer-link:hover {
     text-decoration: underline;
 }
-
 
 .footer-logo {
     width: 50px;
@@ -103,5 +236,15 @@ footer {
 
     main {
         padding: 10px;
+    }
+
+    .profile-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-photo {
+        margin-right: 0;
+        margin-bottom: 15px;
     }
 }

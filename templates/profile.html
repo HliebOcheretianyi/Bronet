@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Profile - Bronet{% endblock %}
+
+{% block content %}
+<section id="profile-section">
+    <!-- Navigation Arrows -->
+    <div class="nav-arrow left-arrow" onclick="showPreviousProfile()">&#10094;</div>
+
+    <div class="profile-wrapper">
+        <!-- Profile 1 -->
+        <div class="profile-card">
+            <div class="profile-content">
+                <div class="profile-image">
+                    <img src="{{ url_for('static', filename='images/profile1.jpg') }}" alt="Jane Doe">
+                </div>
+                <div class="profile-info">
+                    <h3>Jane Doe</h3>
+                    <p><strong>Age:</strong> 28</p>
+                    <p><strong>Location:</strong> Paris, France</p>
+                    <p><strong>About:</strong> I love good films and jazz music. I travel a lot, but now I’m living in Paris for three months.</p>
+                </div>
+                <div class="profile-social">
+                    <a href="https://www.facebook.com/jane.doe" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/jad.neoe" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 2 -->
+        <div class="profile-card">
+            <div class="profile-content">
+                <div class="profile-image">
+                    <img src="{{ url_for('static', filename='images/profile2.jpg') }}" alt="John Smith">
+                </div>
+                <div class="profile-info">
+                    <h3>John Smith</h3>
+                    <p><strong>Age:</strong> 34</p>
+                    <p><strong>Location:</strong> Berlin, Germany</p>
+                    <p><strong>About:</strong> I'm a software developer who loves hiking and discovering hidden spots in the city.</p>
+                </div>
+                <div class="profile-social">
+                    <a href="https://twitter.com/john.smith" target="_blank">Twitter</a>
+                    <a href="https://www.linkedin.com/in/johnsmith" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 3 -->
+        <div class="profile-card">
+            <div class="profile-content">
+                <div class="profile-image">
+                    <img src="{{ url_for('static', filename='images/profile3.jpg') }}" alt="Emily Clarke">
+                </div>
+                <div class="profile-info">
+                    <h3>Emily Clarke</h3>
+                    <p><strong>Age:</strong> 26</p>
+                    <p><strong>Location:</strong> New York, USA</p>
+                    <p><strong>About:</strong> Artist and photographer, passionate about urban landscapes and street art.</p>
+                </div>
+                <div class="profile-social">
+                    <a href="https://www.instagram.com/emily.clarke" target="_blank">Instagram</a>
+                    <a href="https://www.behance.net/emilyclarke" target="_blank">Behance</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="nav-arrow right-arrow" onclick="showNextProfile()">&#10095;</div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<!-- Importing the external script.js file -->
+<script src="{{ url_for('static', filename='static/script.js') }}"></script>
+{% endblock %}
