@@ -238,6 +238,13 @@ footer {
         padding: 10px;
     }
 
+
+    .profile-card {
+        width: 100vw; /* Ensure the card takes full width */
+        height: auto;
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
     .profile-info {
         flex-direction: column;
         text-align: center;
@@ -247,4 +254,5 @@ footer {
         margin-right: 0;
         margin-bottom: 15px;
     }
+
 }
